@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:word-clone": "npm --prefix word-clone run build"
+    "build:word-clone": "npm --prefix word-clone run build",
+    "build:monorepo-test": "npm --prefix monorepo-test run build"
   },
   "repository": {
     "type": "git",
