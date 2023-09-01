@@ -2,4 +2,4 @@
 
 ## word-clone
 
-https://jor-word-clone.netlify.app/
+https://project-wordle.netlify.app/

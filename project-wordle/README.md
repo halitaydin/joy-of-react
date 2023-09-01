@@ -1,6 +1,6 @@
 # Word Game
 
-And here is my solution: https://jor-word-clone.netlify.app/
+And here is my solution: https://project-wordle.netlify.app/
 
 ## Joy of React, Project I
 
