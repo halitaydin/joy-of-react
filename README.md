@@ -1,5 +1,5 @@
 # solutions
 
-## word-clone
+## project-wordle
 
 https://project-wordle.netlify.app/
