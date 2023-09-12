@@ -12,7 +12,8 @@
     "react-dom": "18.2.0"
   },
   "scripts": {
-    "dev": "parcel public/index.html",
+    "cleanup": "rm -rf .parcel-cache dist",
+    "dev": "npm run cleanup && parcel public/index.html",
     "build": "parcel build public/index.html",
     "new-component": "new-component"
   },

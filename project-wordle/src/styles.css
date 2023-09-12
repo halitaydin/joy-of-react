@@ -94,6 +94,7 @@ h1 {
   display: flex;
   gap: 4px;
   margin-bottom: 4px;
+  justify-content: center;
 }
 
 .cell {
@@ -145,6 +146,34 @@ h1 {
   flex-direction: column;
   gap: 8px;
   height: 6.75rem;
+}
+
+@media screen and (max-width: 600px) {
+  .guess-input-wrapper {
+    display: none;
+  }
+
+  .cell {
+    width: 15%;
+    font-size: 1.5rem;
+  }
+
+  .game-wrapper {
+    padding: 0;
+    margin: 30px;
+  }
+
+  header {
+    height: 40px;
+  }
+
+  h1 {
+    line-height: 40px;
+  }
+
+  .keyboard-cell {
+    font-size: 1.5rem;
+  }
 }
 
 .guess-input-wrapper label {
@@ -228,5 +257,101 @@ h1 {
   }
   to {
     transform: translateY(0%);
+  }
+}
+
+/*
+  Keyboard
+*/
+
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  gap: 0.3rem;
+  font-size: 1rem;
+  width: 100%;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.keyboard-cell {
+  width: 8%;
+  border-radius: 5px;
+  background-color: var(--color-gray-900);
+}
+
+.keyboard-cell:nth-child(20),
+.keyboard-cell:nth-child(28) {
+  text-align: center;
+  width: 15%;
+}
+
+.keyboard-cell.correct {
+  background: var(--color-success);
+  border-color: var(--color-success);
+  color: white;
+}
+.keyboard-cell.incorrect {
+  background: var(--color-gray-300);
+  border-color: var(--color-gray-300);
+  color: white;
+}
+.keyboard-cell.misplaced {
+  background: var(--color-warning);
+  border-color: var(--color-warning);
+  color: white;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .keyboard-cell:hover {
+    background-color: var(--color-gray-500);
+    cursor: pointer;
+  }
+}
+
+.keyboard-cell:active {
+  background-color: var(--color-gray-300);
+}
+
+.restart {
+  color: black;
+  font-size: 24px;
+}
+
+/*
+  Shake animations
+  https://css-tricks.com/snippets/css/shake-css-keyframe-animation/
+*/
+
+.box {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
   }
 }

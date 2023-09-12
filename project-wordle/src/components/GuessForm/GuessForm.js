@@ -1,6 +1,4 @@
-import React from "react";
-
-function GuessForm({ addGuess, word, setWord, check, result }) {
+function GuessForm({ addGuess, word, setWord, check, disabled, counter, setCounter, inputStatusCheck }) {
   return (
     <form
       className="guess-input-wrapper"
@@ -8,6 +6,8 @@ function GuessForm({ addGuess, word, setWord, check, result }) {
         event.preventDefault();
         addGuess(word);
         setWord("");
+        setCounter(counter + 1);
+        inputStatusCheck(word);
         check();
       }}
     >
@@ -18,7 +18,7 @@ function GuessForm({ addGuess, word, setWord, check, result }) {
         value={word}
         pattern="[A-Z]{5}"
         maxLength={5}
-        disabled={result}
+        disabled={disabled}
         required
         onChange={(event) => setWord(event.target.value.toUpperCase())}
       />
