@@ -1,4 +1,4 @@
-function GuessForm({ addGuess, word, setWord, check, disabled, counter, setCounter, inputStatusCheck }) {
+function GuessForm({ addGuess, word, setWord, result, counter, setCounter }) {
   return (
     <form
       className="guess-input-wrapper"
@@ -7,8 +7,6 @@ function GuessForm({ addGuess, word, setWord, check, disabled, counter, setCount
         addGuess(word);
         setWord("");
         setCounter(counter + 1);
-        inputStatusCheck(word);
-        check();
       }}
     >
       <label htmlFor="guess-input">Enter guess:</label>
@@ -18,9 +16,10 @@ function GuessForm({ addGuess, word, setWord, check, disabled, counter, setCount
         value={word}
         pattern="[A-Z]{5}"
         maxLength={5}
-        disabled={disabled}
+        disabled={result !== null}
         required
         onChange={(event) => setWord(event.target.value.toUpperCase())}
+        title="need 5 letter"
       />
     </form>
   );

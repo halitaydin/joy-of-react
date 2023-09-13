@@ -1,12 +1,12 @@
 const letters = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "A", "S", "D", "F", "G", "H", "J", "K", "L", "\u23CE", "Z", "X", "C", "V", "B", "N", "M", "\u232b"];
 
-function Keyboard({ addKeyGuess, keyGuesses, addGuess, setKeyGuesses, counter, setCounter, check, keyStatusCheck }) {
+function Keyboard({ addKeyGuess, keyGuesses, addGuess, setKeyGuesses, counter, setCounter }) {
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
         keyGuesses.length === 5
-          ? (addGuess(keyGuesses.join("")), setKeyGuesses([]), setCounter(counter + 1), keyStatusCheck(), check())
+          ? (addGuess(keyGuesses.join("")), setKeyGuesses([]), setCounter(counter + 1))
           : document.getElementsByClassName("guess")[counter].classList.add("box");
       }}
     >

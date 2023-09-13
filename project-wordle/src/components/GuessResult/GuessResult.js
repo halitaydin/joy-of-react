@@ -4,7 +4,7 @@ function GuessResult({ result, guesses, answer, restart }) {
       {result && (
         <div className="happy banner">
           <p>
-            <strong>Congratulations!</strong> Got it in <strong>{guesses.length} guesses</strong>.
+            <strong>Congratulations!</strong> Got it in <strong>{guesses.length === 1 ? `${guesses.length} guess` : `${guesses.length} guesses`}</strong>.
           </p>
           <p>
             <button className="restart" onClick={restart}>
