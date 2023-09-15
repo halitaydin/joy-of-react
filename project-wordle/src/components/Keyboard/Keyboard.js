@@ -1,6 +1,7 @@
 const letters = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "A", "S", "D", "F", "G", "H", "J", "K", "L", "\u23CE", "Z", "X", "C", "V", "B", "N", "M", "\u232b"];
 
 function Keyboard({ addKeyGuess, keyGuesses, addGuess, setKeyGuesses, counter, setCounter }) {
+  const isMobile = navigator.userAgent.match(/iPhone|iPad|iPod|Android|Windows Phone/i);
   return (
     <form
       onSubmit={(e) => {
@@ -16,9 +17,11 @@ function Keyboard({ addKeyGuess, keyGuesses, addGuess, setKeyGuesses, counter, s
             <span
               key={index}
               className="keyboard-cell"
+              onTouchEnd={() => {
+                isMobile && (addKeyGuess(letter), document.getElementsByClassName("guess")[counter].classList.remove("box"));
+              }}
               onClick={() => {
-                addKeyGuess(letter);
-                document.getElementsByClassName("guess")[counter].classList.remove("box");
+                !isMobile && (addKeyGuess(letter), document.getElementsByClassName("guess")[counter].classList.remove("box"));
               }}
             >
               {letter}

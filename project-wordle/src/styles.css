@@ -148,34 +148,6 @@ h1 {
   height: 6.75rem;
 }
 
-@media screen and (max-width: 600px) {
-  .guess-input-wrapper {
-    display: none;
-  }
-
-  .cell {
-    width: 15%;
-    font-size: 1.5rem;
-  }
-
-  .game-wrapper {
-    padding: 0;
-    margin: 30px;
-  }
-
-  header {
-    height: 40px;
-  }
-
-  h1 {
-    line-height: 40px;
-  }
-
-  .keyboard-cell {
-    font-size: 1.5rem;
-  }
-}
-
 .guess-input-wrapper label {
   font-size: 1.25rem;
 }
@@ -287,6 +259,40 @@ h1 {
 .keyboard-cell:nth-child(28) {
   text-align: center;
   width: 15%;
+}
+
+@media screen and (max-width: 600px) {
+  .guess-input-wrapper {
+    display: none;
+  }
+
+  .cell {
+    width: 15%;
+    font-size: 1.5rem;
+  }
+
+  .game-wrapper {
+    padding: 0;
+    margin: 5px auto;
+    margin-bottom: 50px;
+  }
+
+  header {
+    height: 40px;
+  }
+
+  h1 {
+    line-height: 40px;
+  }
+
+  .keyboard {
+    width: 355px;
+  }
+
+  .keyboard-cell {
+    width: 30px;
+    font-size: 1.7rem;
+  }
 }
 
 .keyboard-cell.correct {

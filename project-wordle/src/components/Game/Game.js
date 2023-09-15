@@ -56,7 +56,7 @@ function Game() {
 
     if (newKeyGuess.length <= 5) {
       setKeyGuesses(newKeyGuess);
-    } else if (newKeyGuess.length > 5) {
+    } else if (newKeyGuess.length === 5) {
       document.querySelector('button[type="submit"]').addEventListener("click", () => {
         checkGuess(newKeyGuess.join(""), answer).map(({ letter, status }) => {
           keyboardStatus(letter, status);
