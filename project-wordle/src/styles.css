@@ -313,7 +313,7 @@ h1 {
 
 @media (hover: hover) and (pointer: fine) {
   .keyboard-cell:hover {
-    background-color: var(--color-gray-500);
+    filter: brightness(85%);
     cursor: pointer;
   }
 }
