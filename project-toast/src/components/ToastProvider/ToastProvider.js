@@ -9,7 +9,8 @@ function ToastProvider({ children }) {
   const [toast, setToast] = React.useState([]);
   const escapeKey = useEscapeKey(setToast);
 
-  function handleMessage() {
+  function handleMessage(e) {
+    e.preventDefault();
     const nextToast = [
       ...toast,
       {
@@ -19,6 +20,8 @@ function ToastProvider({ children }) {
       },
     ];
     setToast(nextToast);
+    setMessage("");
+    setVariant("notice");
   }
 
   return (

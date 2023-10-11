@@ -20,15 +20,7 @@ function ToastForm() {
 
       <ToastShelf />
 
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          handleMessage();
-          setMessage("");
-          setVariant("notice");
-        }}
-        className={styles.controlsWrapper}
-      >
+      <form onSubmit={handleMessage} className={styles.controlsWrapper}>
         <div className={styles.row}>
           <label
             htmlFor="message"
