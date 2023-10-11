@@ -1,9 +1,9 @@
 import React from "react";
 
-function useEscapeKey(setState) {
+function useKeydown(key, callback) {
   React.useEffect(() => {
     function handleCloseAllToasts(e) {
-      e.code === "Escape" && setState([]);
+      e.code === key && callback(e);
     }
 
     window.addEventListener("keydown", handleCloseAllToasts);
@@ -11,7 +11,7 @@ function useEscapeKey(setState) {
     return () => {
       window.removeEventListener("keydown", handleCloseAllToasts);
     };
-  }, [setState]);
+  }, [key, callback]);
 }
 
-export default useEscapeKey;
+export default useKeydown;
