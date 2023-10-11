@@ -9,6 +9,8 @@ import {
 
 import styles from "./Toast.module.css";
 
+import VisuallyHidden from "../VisuallyHidden";
+
 const ICONS_BY_VARIANT = {
   notice: Info,
   warning: AlertTriangle,
@@ -31,7 +33,10 @@ function Toast({ children, variant, id, toast, setToast }) {
       <div className={styles.iconContainer}>
         <Icon size={24} />
       </div>
-      <p className={styles.content}>{children}</p>
+      <p className={styles.content}>
+        <VisuallyHidden>{variant}</VisuallyHidden>
+        {children}
+      </p>
       <button
         className={styles.closeButton}
         onClick={handleClose}
