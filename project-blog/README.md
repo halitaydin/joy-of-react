@@ -1,10 +1,10 @@
 # Blog Project
+
 ## Joy of React, Project III
 
 In this project, we'll build an interactive MDX-based blog using Next 13:
 
-![Screenshot of the final product](/docs/end-result.png)
-
+![Screenshot of the final product](./docs/end-result.png)
 
 ## Getting Started
 
@@ -34,6 +34,7 @@ npm run new-component [TheNewComponentName]
 ## Troubleshooting
 
 - When you run a dev server, you may notice a warning: _You have enabled experimental feature (outputFileTracingIncludes)_. This warning can safely be ignored. `outputFileTracingIncludes` is a configuration option required to make sure that our MDX files are included when deploying our application to Vercel.
+
   - If you're curious about this, you can learn more [in Module 6 of the course](https://courses.joshwcomeau.com/joy-of-react/06-full-stack-react/07.01-rendering-strategies-exercises#failed-vercel-deploys)
 
 - If the dev server seems to be stuck on a stale error, and restarting the dev server doesn't help, you can clear Next's cache by deleting the `.next/cache` subdirectory. Don't worry about losing anything important: everything inside the `.next` directory is derived from the rest of the codebase.
@@ -43,14 +44,13 @@ npm run new-component [TheNewComponentName]
 - Please make sure you're using Node.js version 16.14 or higher. This is the minimum Node version required by Next.js.
   - You can find your current Node version by running `node -v` in a terminal. If the value is less than 16.14, you'll want to upgrade Node to the [current LTS (Long Term Support) version](https://nodejs.org/en).
 
-
 ---
 
 ## Exercise 1: Homepage list of posts
 
 Let's update the homepage so that it shows a list of blog posts:
 
-![Screenshot showing the homepage with a reverse-chronological list of blog posts](/docs/homepage-list-of-posts.png)
+![Screenshot showing the homepage with a reverse-chronological list of blog posts](./docs/homepage-list-of-posts.png)
 
 **Acceptance Criteria:**
 
@@ -68,7 +68,7 @@ Let's update the homepage so that it shows a list of blog posts:
 
 When clicking on one of the blog posts on the homepage, we're taken to the dynamic blog post route:
 
-![Screenshot showing the blog post layout with the initial placeholder content](/docs/blog-post-before-mdx.png)
+![Screenshot showing the blog post layout with the initial placeholder content](./docs/blog-post-before-mdx.png)
 
 In this exercise, we'll use next-mdx-remote to render the MDX associated with the selected blog post.
 
@@ -80,7 +80,7 @@ In this exercise, we'll use next-mdx-remote to render the MDX associated with th
 
 The final result should look like this:
 
-![Screenshot showing the blog post layout with all of the content from the MDX file, with correct formatting (paragraphs, headings, etc)](/docs/blog-post-with-mdx.png)
+![Screenshot showing the blog post layout with all of the content from the MDX file, with correct formatting (paragraphs, headings, etc)](./docs/blog-post-with-mdx.png)
 
 **Note:** Inside `/src/helpers/file-helpers.js`, you'll find a function called `loadBlogPost`. You can use this helper function if you're not comfortable with the Node `fs` module.
 
@@ -101,18 +101,13 @@ For example, here's the metadata we should include, in the `<head>`:
 
 ```html
 <title>Bits & Bytes</title>
-<meta
-  name="description"
-  content="A wonderful blog about JavaScript"
-/>
+<meta name="description" content="A wonderful blog about JavaScript" />
 ```
 
 And on the blog post page, it should look something like this:
 
 ```html
-<title>
-  Understanding the JavaScript Modulo Operator • Bits & Bytes
-</title>
+<title>Understanding the JavaScript Modulo Operator • Bits & Bytes</title>
 <meta
   name="description"
   content="One of the most commonly-misunderstood operators…"
@@ -129,7 +124,7 @@ And on the blog post page, it should look something like this:
 **Resources:**
 
 - [“Next.js Metadata API” lesson](https://courses.joshwcomeau.com/joy-of-react/06-full-stack-react/05-metadata)
-- [Next Metadata API official docs](https://nextjs.org/docs/app/building-your-application/optimizing/metadata)
+- [Next Metadata API official docs](https://nextjs.org./docs/app/building-your-application/optimizing/metadata)
 
 ---
 
@@ -141,7 +136,7 @@ This package is already installed in this repository, and is being used inside t
 
 The end result should look like this:
 
-![Screenshot of the code snippets with correct syntax highlighting](/docs/bright-syntax-highlighting.png)
+![Screenshot of the code snippets with correct syntax highlighting](./docs/bright-syntax-highlighting.png)
 
 **Acceptance Criteria:**
 
@@ -165,7 +160,6 @@ The “Understanding the JavaScript Modulo Operator” blog post makes use of tw
 
 **This is a significant challenge.** To help keep things a bit more manageable, we'll break this exercise up into 3 parts.
 
-
 ### Exercise 5A: Rendering embedded components
 
 First thing's first, we need to get this component rendering!
@@ -175,14 +169,14 @@ Inside the `javascript-modulo-operator.mdx` file, you'll notice that some code h
 ```md
 **TODO: Uncomment DivisionGroupsDemo**
 
-{/* <DivisionGroupsDemo /> */}
+{/_ <DivisionGroupsDemo /> _/}
 ```
 
 If you uncomment this code, you'll get an error telling you that next-mdx-remote doesn't know how to resolve the `DivisionGroupsDemo`.
 
 This component exists, and you can find it in `/src/components/DivisionGroupsDemo/DivisionGroupsDemo.js`. Your mission in the first part of this exercise is to resolve this component, fixing the issue and getting it rendering, like so:
 
-![Screen recording showing the embedded `DivisionGroupsDemo` component](/docs/division-groups-demo.png)
+![Screen recording showing the embedded `DivisionGroupsDemo` component](./docs/division-groups-demo.png)
 
 **Acceptance Criteria:**
 
@@ -195,16 +189,15 @@ This component exists, and you can find it in `/src/components/DivisionGroupsDem
 - [next-mdx-remote docs](https://github.com/hashicorp/next-mdx-remote#custom-components)
 - [“Lazy Loading in Next”](https://courses.joshwcomeau.com/joy-of-react/06-full-stack-react/10.01-lazy-loading-in-next)
 
-
 ### Exercise 5B: Animations with Framer Motion
 
 As it stands, the `DivisionGroupsDemo` widget works alright, but it does feel pretty abrupt:
 
-![Screen recording showing the default behaviour, instant transitions](/docs/division-groups-default.gif)
+![Screen recording showing the default behaviour, instant transitions](./docs/division-groups-default.gif)
 
 Let's implement some _layout animations_, so that the pink circles being grouped up glide smoothly when the number of groups changes:
 
-![Screen recording showing the new behaviour, smooth layout animations](/docs/division-groups-animated.gif)
+![Screen recording showing the new behaviour, smooth layout animations](./docs/division-groups-animated.gif)
 
 **Acceptance Criteria:**
 
@@ -220,7 +213,6 @@ Let's implement some _layout animations_, so that the pink circles being grouped
 - [“Working With Groups” lesson](https://courses.joshwcomeau.com/joy-of-react/07-framer-motion/04.01-layout-groups)
 - [“Motion Accessibility” lesson](https://courses.joshwcomeau.com/joy-of-react/07-framer-motion/05-accessibility)
 
-
 ### Exercise 5C: Remainder area
 
 If you keep scrolling down inside `javascript-modulo-operator.mdx`, you'll notice another instance of `DivisionGroupsDemo` which has been commented out:
@@ -228,19 +220,18 @@ If you keep scrolling down inside `javascript-modulo-operator.mdx`, you'll notic
 ```md
 **TODO: Uncomment DivisionGroupsDemo**
 
-{/* <DivisionGroupsDemo includeRemainderArea={true} numOfItems={11} initialNumOfGroups={4} /> */}
+{/_ <DivisionGroupsDemo includeRemainderArea={true} numOfItems={11} initialNumOfGroups={4} /> _/}
 ```
 
 If you haven't already, you can uncomment this second `DivisionGroupsDemo` element. Your mission in this final part of the exercise is to ensure that the layout animations continue working as expected:
 
-![Screen recording showing the final animation](/docs/divison-groups-demo-with-remainder.gif)
+![Screen recording showing the final animation](./docs/divison-groups-demo-with-remainder.gif)
 
 **There's a subtle thing here:** We want elements entering the Remainder Area to enter from the right, not the left. This GIF shows the difference:
 
-![Screen recording showing how elements should stack in the Remainder Area](/docs/division-groups-remainder-stack-direction.gif)
+![Screen recording showing how elements should stack in the Remainder Area](./docs/division-groups-remainder-stack-direction.gif)
 
 **NOTE:** to help illustrate the difference, I've given the items different colors/shapes in this GIF. You don't need to incorporate this change; your items should all be pink circles.
-
 
 **Acceptance Criteria:**
 
@@ -259,7 +250,7 @@ If you haven't already, you can uncomment this second `DivisionGroupsDemo` eleme
 
 Our “Understanding the JavaScript Modulo Operator” blog post has one more embedded widget, `CircularColorsDemo`:
 
-![Screen recording of the `CircularColorsDemo` component](/docs/circular-colors-demo.gif)
+![Screen recording of the `CircularColorsDemo` component](./docs/circular-colors-demo.gif)
 
 This widget demonstrates how the Modulo operator can be used to select items from an array in a circular manner. A timer climbs from 0 to infinity, and that linear value is used to pluck one of three colors, circling back to the front on each 3rd value.
 
@@ -286,7 +277,7 @@ This widget demonstrates how the Modulo operator can be used to select items fro
 
 Inside the site header, we have a little sun icon. As of right now, it doesn't do anything. Your mission in this exercise is to wire it up so that it toggles between light mode and dark mode:
 
-![Toggling between light mode and dark mode](/docs/dark-mode-toggle.gif)
+![Toggling between light mode and dark mode](./docs/dark-mode-toggle.gif)
 
 Inside the root layout (`/src/app/layout.js`), you'll see that the theme is currently being hardcoded as `'light'`. If you manually change this value to `'dark'`, the site will flip to the dark mode color theme. Your mission is to expand this implementation so that it can be toggled by the user, with their preference being persisted.
 
@@ -301,9 +292,7 @@ Inside the root layout (`/src/app/layout.js`), you'll see that the theme is curr
 
 - [“Dark Mode” lesson](https://courses.joshwcomeau.com/joy-of-react/06-full-stack-react/11-dark-mode)
 
-
 ---
-
 
 ## Stretch goals
 
@@ -319,7 +308,7 @@ A surprising number of people prefer to read blog posts using an RSS reader. An 
 
 For example, [Feedly](https://feedly.com/) is an RSS reader showing new posts from some of the blogs I follow:
 
-![Screenshot of “Feedly”, an RSS reader](/docs/feedly.png)
+![Screenshot of “Feedly”, an RSS reader](./docs/feedly.png)
 
 In order for people to add our blog to their RSS readers, we need to produce an RSS feed. This is an XML document that contains all the info these readers need. For example, you can check out the RSS feed I publish on my official blog here:
 
@@ -327,7 +316,7 @@ In order for people to add our blog to their RSS readers, we need to produce an 
 
 Our blog currently includes a link to the RSS feed, using the typical RSS icon:
 
-![Screenshot of the site header, showing the RSS icon](/docs/rss-icon.png)
+![Screenshot of the site header, showing the RSS icon](./docs/rss-icon.png)
 
 Right now, it links to a feed that doesn't exist. Your mission in this stretch goal should be to produce an RSS feed.
 
@@ -339,15 +328,15 @@ Right now, it links to a feed that doesn't exist. Your mission in this stretch g
 
 There are two viable approaches here:
 
-1. You can generate the XML file during the build, dropping the XML file in the `/public` directory. You can use a `prebuild` NPM script to automatically do some work before the `build` script runs. See the [NPM docs](https://docs.npmjs.com/cli/v9/using-npm/scripts#pre--post-scripts) for more information.
+1. You can generate the XML file during the build, dropping the XML file in the `/public` directory. You can use a `prebuild` NPM script to automatically do some work before the `build` script runs. See the [NPM docs](https:/./docs.npmjs.com/cli/v9/using-npm/scripts#pre--post-scripts) for more information.
 
-2. You can generate the XML file on-demand, when the user visits `/rss.xml`, using a Next.js [Route Handler](https://nextjs.org/docs/app/building-your-application/routing/route-handlers). Route handlers allow us to build API endpoints that run on the server and can do things like generate custom responses.
+2. You can generate the XML file on-demand, when the user visits `/rss.xml`, using a Next.js [Route Handler](https://nextjs.org./docs/app/building-your-application/routing/route-handlers). Route handlers allow us to build API endpoints that run on the server and can do things like generate custom responses.
 
 To generate the RSS feed itself, you can use an NPM dependency. I use the [rss](https://www.npmjs.com/package/rss) NPM package. It's fantastic.
 
 To get the list of blog posts, you can reuse the `getBlogPostList` function we saw in Exercise 1.
 
-If you opt to go the “on-demand” route, you'll need to set a specific header for everything to work correctly: `Content-Type: application/xml`. You can set headers using a `Response` object, as detailed in the [Route Handlers](https://nextjs.org/docs/app/building-your-application/routing/route-handlers) docs.
+If you opt to go the “on-demand” route, you'll need to set a specific header for everything to work correctly: `Content-Type: application/xml`. You can set headers using a `Response` object, as detailed in the [Route Handlers](https://nextjs.org./docs/app/building-your-application/routing/route-handlers) docs.
 
 ---
 
@@ -363,7 +352,7 @@ As it stands, we get a pretty funky error:
 
 Your mission in this exercise is to instead render a “404 not found” page:
 
-![Screenshot of the 404 page](/docs/404-page.png)
+![Screenshot of the 404 page](./docs/404-page.png)
 
 **Acceptance Criteria:**
 
@@ -379,7 +368,7 @@ There's two things to be aware of, before you start work on this:
 
 **Tips and hints:**
 
-To signal to Next that a 404 page should be triggered, you'll want to invoke the [notFound() function](https://nextjs.org/docs/app/api-reference/functions/not-found). By default, this shows a not-very-aesthetic 404 message. We can replace this by creating a [`not-found.js` file](https://nextjs.org/docs/app/api-reference/file-conventions/not-found) inside our `/app` directory.
+To signal to Next that a 404 page should be triggered, you'll want to invoke the [notFound() function](https://nextjs.org./docs/app/api-reference/functions/not-found). By default, this shows a not-very-aesthetic 404 message. We can replace this by creating a [`not-found.js` file](https://nextjs.org./docs/app/api-reference/file-conventions/not-found) inside our `/app` directory.
 
 So far in this project, all of the styles have been provided, but in this case, no styles exist. Feel free to create a new CSS Module for the `not-found` styles.
 
@@ -398,7 +387,7 @@ From this point onwards, it's up to you what you want to do. Here are some sugge
 - Add more than 2 color themes.
 - Add a "Table of Contents" component that plucks out the headings from the blog post.
 - Include a “Comments” section, using something like [webmentions](https://webmention.io/), loaded with Suspense!
-- Create custom-generated OpenGraph images using [vercel/og](https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation)
+- Create custom-generated OpenGraph images using [vercel/og](https://vercel.com./docs/concepts/functions/edge-functions/og-image-generation)
 
 If you've been thinking about starting a developer blog, this project should serve as an excellent foundation for you to build upon. Just be sure to abide by the conditions in the [LICENSE.md file](https://github.com/joy-of-react/project-blog/blob/main/LICENSE.md).
 
