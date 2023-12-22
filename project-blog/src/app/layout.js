@@ -1,5 +1,6 @@
 import React from "react";
 import RespectMotionPreferences from "@/components/RespectMotionPreferences";
+import { cookies } from "next/headers";
 
 import { Work_Sans, Spline_Sans_Mono } from "next/font/google";
 import clsx from "clsx";
@@ -30,7 +31,9 @@ export const metadata = {
 
 function RootLayout({ children }) {
   // TODO: Dynamic theme depending on user preference
-  const theme = "light";
+  const savedTheme = cookies().get("color-theme");
+  const theme = savedTheme?.value || "light";
+  const themeCOLORS = theme === "light" ? LIGHT_TOKENS : DARK_TOKENS;
 
   return (
     <RespectMotionPreferences>
@@ -38,10 +41,10 @@ function RootLayout({ children }) {
         lang="en"
         className={clsx(mainFont.variable, monoFont.variable)}
         data-color-theme={theme}
-        style={theme === "light" ? LIGHT_TOKENS : DARK_TOKENS}
+        style={themeCOLORS}
       >
         <body>
-          <Header theme={theme} />
+          <Header initialTheme={theme} />
           <main>{children}</main>
           <Footer />
         </body>

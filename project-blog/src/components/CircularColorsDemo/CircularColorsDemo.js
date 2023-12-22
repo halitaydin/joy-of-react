@@ -52,7 +52,7 @@ function CircularColorsDemo() {
         {COLORS.map((color, index) => {
           const isSelected = color.value === selectedColor.value;
           return (
-            <li className={styles.color} key={index} layout={true}>
+            <li className={styles.color} key={index}>
               {isSelected && (
                 <motion.div
                   className={styles.selectedColorOutline}
