@@ -8,8 +8,15 @@ import { loadBlogPost } from "@/helpers/file-helpers";
 import CodeSnippet from "@/components/CodeSnippet";
 import dynamic from "next/dynamic";
 import Spinner from "@/components/Spinner";
+import { notFound } from "next/navigation";
 
 export async function generateMetadata({ params }) {
+  const blogPostData = await loadBlogPost(params.postSlug);
+
+  if (!blogPostData) {
+    return null;
+  }
+
   const {
     frontmatter: { title, abstract },
   } = await loadBlogPost(`${params.postSlug}`);
@@ -37,6 +44,12 @@ const CircularColorsDemo = dynamic(
 );
 
 async function BlogPost({ params }) {
+  const blogPostData = await loadBlogPost(params.postSlug);
+
+  if (!blogPostData) {
+    notFound();
+  }
+
   const {
     frontmatter: { title, publishedOn },
     content,
