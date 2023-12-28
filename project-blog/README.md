@@ -1,5 +1,7 @@
 # Blog Project
 
+And here is my solution: https://jor-project-blog.netlify.app/
+
 ## Joy of React, Project III
 
 In this project, we'll build an interactive MDX-based blog using Next 13:
