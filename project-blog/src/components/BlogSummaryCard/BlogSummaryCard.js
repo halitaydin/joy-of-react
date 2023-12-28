@@ -15,7 +15,7 @@ async function BlogSummaryCard() {
     const humanizedDate = format(new Date(publishedOn), "MMMM do, yyyy");
     return (
       <Card className={styles.wrapper} key={slug}>
-        <Link href={href} className={styles.title}>
+        <Link href={href} className={styles.title} prefetch={true}>
           {title}
         </Link>
         <time dateTime={publishedOn}>{humanizedDate}</time>
