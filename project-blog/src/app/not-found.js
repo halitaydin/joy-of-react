@@ -4,6 +4,8 @@ import { BLOG_TITLE } from "@/constants";
 
 import styles from "./not-found.module.css";
 
+export const runtime = "edge";
+
 export const metadata = {
   title: `404 Not found • ${BLOG_TITLE}`,
 };
