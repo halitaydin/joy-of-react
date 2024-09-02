@@ -1,6 +1,6 @@
 # Toast Component Project
 
-And here is my solution: https://project-toast.netlify.app/
+And here is my solution: https://project-toast.pages.dev
 
 ## Joy of React, Project II
 

@@ -1,6 +1,6 @@
 # Word Game
 
-And here is my solution: https://project-wordle.netlify.app/
+And here is my solution: https://jor-project-wordle.pages.dev
 
 ## Joy of React, Project I
 

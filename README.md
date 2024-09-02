@@ -2,11 +2,11 @@
 
 ## project-wordle
 
-https://project-wordle.netlify.app/
+https://jor-project-wordle.pages.dev
 
 ## project-toast
 
-https://project-toast.netlify.app/
+https://project-toast.pages.dev
 
 ## project-blog
 
