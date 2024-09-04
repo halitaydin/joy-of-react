@@ -29,9 +29,6 @@ export const metadata = {
   description: "A wonderful blog about JavaScript",
 };
 
-// Configuring the Cloudflare Runtime
-export const runtime = "edge";
-
 function RootLayout({ children }) {
   // TODO: Dynamic theme depending on user preference
   const savedTheme = cookies().get("color-theme");

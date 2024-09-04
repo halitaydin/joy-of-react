@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "new-component": "new-component",
-    "pages:build": "npx @cloudflare/next-on-pages"
+    "new-component": "new-component"
   },
   "dependencies": {
     "bright": "0.8.4",
@@ -26,8 +25,5 @@
     "react-dom": "18.2.0",
     "react-feather": "2.0.10",
     "rss": "^1.2.2"
-  },
-  "devDependencies": {
-    "@cloudflare/next-on-pages": "^1.13.2"
   }
 }
