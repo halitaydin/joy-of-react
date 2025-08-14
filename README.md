@@ -10,4 +10,4 @@ https://project-toast.pages.dev
 
 ## project-blog
 
-https://jor-project-blog.netlify.app/
+this link will be update after deploy project to the cloudflare workers.
